@@ -46,3 +46,5 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - hspec-golden-tests
+    - hspec
+    - hspec-golden
