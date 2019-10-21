@@ -14,19 +14,16 @@ goldenBytestring name actualOutput =
         writeToFile = B.writeFile,
         readFromFile = B.readFile,
         testName = name,
-        directory = ".golden"
+        directory = ".otherGolden"
+          
     }
 
--- @
---spec :: Spec
---spec =
---  describe "encodeCountries" $
---   it "encodes to JSON a group of Countries " $
---    defaultGolden "json" (encodeCountries countries)
--- @
 
 spec :: Spec
 spec =
-    describe "encodeCountries" $
-    it "encodes to JSON a group of Countries " $
+  describe "encodeCountries" $ do
+   it "encodes a group of Countries into a JSON String " $
+    defaultGolden "json" (show $ encodeCountries countries)
+  
+   it "encodes a group of Countries into a JSON bytestring " $
     goldenBytestring "json" (encodeCountries countries)

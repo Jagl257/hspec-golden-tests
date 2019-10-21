@@ -2,10 +2,10 @@
 
 module JSON.Json where
 
-import Data.Aeson (ToJSON, FromJSON, eitherDecode, encode) 
-import GHC.Generics(Generic)
-import Data.ByteString.Lazy (ByteString)
-import qualified Data.ByteString.Lazy as ByteString
+import            Data.Aeson                                  (ToJSON, encode) 
+import            GHC.Generics                                (Generic)
+import            Data.ByteString.Lazy                        (ByteString)
+import qualified  Data.ByteString.Lazy    as ByteString
 
 countriesPath :: FilePath
 countriesPath = "country.json"
@@ -22,10 +22,7 @@ data Country = Country
   } deriving (Generic, Show)
 
 instance ToJSON Country 
-instance FromJSON Country
 
-decodeCountries :: ByteString -> Either String [Country]
-decodeCountries = eitherDecode 
 
 ecuador = Country "Ecuador" "America" 1
 germany = Country "Germany" "Europe" 2
