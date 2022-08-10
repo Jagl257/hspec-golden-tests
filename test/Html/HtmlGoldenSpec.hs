@@ -2,7 +2,7 @@ module Html.HtmlGoldenSpec where
 
 import           Test.Hspec
 import           Test.Hspec.Golden
-import           HTML.Html
+import           Html
          
 
 spec :: Spec

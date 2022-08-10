@@ -2,7 +2,7 @@ module Json.JsonGoldenSpec where
 
 import           Test.Hspec
 import           Test.Hspec.Golden
-import           JSON.Json
+import           Json
 import qualified Data.ByteString.Lazy as B         
 
 
@@ -15,7 +15,6 @@ goldenBytestring name actualOutput =
         readFromFile = B.readFile,
         testName = name,
         directory = ".otherGolden"
-          
     }
 
 
