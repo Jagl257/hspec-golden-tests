@@ -13,8 +13,9 @@ goldenBytestring name actualOutput =
         encodePretty = show,
         writeToFile = B.writeFile,
         readFromFile = B.readFile,
-        testName = name,
-        directory = ".otherGolden"
+	goldenFile = ".golden" <> name <> "-golden",
+	actualFile = Just (".golden" <> name <> "-actual"),
+	failFirstTime = False
     }
 
 
