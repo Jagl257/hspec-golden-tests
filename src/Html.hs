@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 
-module HTML.Html  where
+module Html  where
 
 import           Text.Blaze.Html5               as H
 import           Text.Blaze.Html5.Attributes    as A
@@ -17,4 +17,3 @@ somePage = html $ do
         H.title "StackBuilders Tutorial."
     body $ do
        "Hello Golden Testers."
-
